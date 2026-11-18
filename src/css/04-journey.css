@@ -1,0 +1,128 @@
+/* journey: pinned horizontal on desktop */
+.hx {
+  position: relative;
+}
+.hx .pin {
+  position: relative;
+}
+.tr {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-left: 2px solid var(--ln);
+  padding-left: 22px;
+  margin-left: 6px;
+  position: relative;
+}
+.tr .ln2 {
+  position: absolute;
+  left: -2px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(var(--a), var(--o));
+  transform-origin: top;
+  transform: scaleY(var(--lp, 0));
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--ln);
+  border-radius: 14px;
+  padding: 16px 18px;
+  position: relative;
+  transition:
+    border-color 0.25s,
+    box-shadow 0.25s;
+}
+.card h3 {
+  font-size: 16px;
+  line-height: 1.3;
+}
+.card .m {
+  color: var(--mu);
+  font-size: 13px;
+  margin: 3px 0 6px;
+}
+.card ul {
+  margin: 6px 0 0 17px;
+  list-style: disc;
+  color: #c9ccd8;
+  font-size: 14px;
+}
+.tr .card:before {
+  content: "";
+  position: absolute;
+  left: -31px;
+  top: 28px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--a);
+  box-shadow: 0 0 0 4px var(--bg);
+}
+.card:hover {
+  border-color: var(--a);
+  box-shadow: 0 12px 34px #19c6a722;
+}
+@media (min-width: 900px) {
+  .hx.on {
+    height: var(--hh, 300vh);
+  }
+  .hx.on .pin {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hx.on .sh {
+    margin: 0 auto 26px;
+    width: 100%;
+    max-width: 1040px;
+    padding: 0 20px;
+  }
+  .hx.on .tr {
+    flex-direction: row;
+    border: 0;
+    padding: 0 0 0 max(20px, calc((100vw - 1000px) / 2));
+    margin: 0;
+    gap: 22px;
+    will-change: transform;
+    align-items: stretch;
+  }
+  .hx.on .tr .ln2 {
+    display: none;
+  }
+  .hx.on .tr .card {
+    flex: none;
+    width: 320px;
+    margin: 0;
+  }
+  .hx.on .tr .card:before {
+    left: 22px;
+    top: -26px;
+    display: none;
+  }
+  .hx.on .prog {
+    display: block;
+  }
+}
+.prog {
+  display: none;
+  width: min(1000px, calc(100% - 40px));
+  height: 3px;
+  background: var(--ln);
+  margin: 26px auto 0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.prog i {
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform-origin: 0 50%;
+  transform: scaleX(var(--hp, 0));
+  background: linear-gradient(90deg, var(--a), var(--o));
+}

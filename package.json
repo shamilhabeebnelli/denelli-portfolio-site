@@ -1,0 +1,12 @@
+{
+  "name": "denelli-portfolio-site",
+  "private": true,
+  "type": "module",
+  "description": "Personal portfolio of Shamil Habeeb, built from modular HTML, CSS and JavaScript into one static page.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.mjs",
+    "lint": "eslint src scripts tests",
+    "check": "npm run lint && npm test"
+  }
+}
