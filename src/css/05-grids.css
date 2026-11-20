@@ -75,3 +75,11 @@ footer {
   color: var(--mu);
   font-size: 13px;
 }
+.pgroup {
+  margin: 26px 0 10px;
+  color: var(--mu);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
